@@ -1,0 +1,40 @@
+{
+  "name": "@csml/studio-cli",
+  "version": "0.1.0",
+  "description": "Interact with CSML Studio in CLI - https://studio.csml.dev",
+  "bin": {
+    "csml-studio": "dist/bin.js"
+  },
+  "scripts": {
+    "build": "rimraf dist && gulp",
+    "prepublish": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "François Falala-Sechet <francois@clevy.io>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "lodash.pick": "^4.4.0",
+    "lodash.uniq": "^4.5.0",
+    "minimist": "^1.2.5",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "source-map-support": "^0.5.19",
+    "superagent": "^5.2.2",
+    "superagent-prefix": "0.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sourcemaps": "^2.6.5"
+  }
+}
