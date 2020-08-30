@@ -2,6 +2,8 @@
 
 The best way to develop CSML bots from the comfort of your laptop!
 
+![Node.js Package](https://github.com/CSML-by-Clevy/CSML-Studio-CLI/workflows/Node.js%20Package/badge.svg)
+
 ## Installation
 
 First, download this CLI tool (requires nodeJS LTS or above):
