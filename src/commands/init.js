@@ -40,6 +40,7 @@ export default class Down extends baseCommand {
     const secret = this.argv.s || process.env.API_SECRET;
     const env = `${key}\n${secret}\n`;
     fs.writeFileSync(path.join(this.projectPath, './.env'), env);
+    fs.writeFileSync(path.join(this.projectPath, './.gitignore'), '.env\n');
 
     this._success(`Successfully initialized CSML Studio project at ${this.projectPath}`);
   }
