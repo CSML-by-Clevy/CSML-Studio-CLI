@@ -32,9 +32,14 @@ export default class Down extends baseCommand {
     await mkdirp(this.projectPath);
     await mkdirp(path.join(this.projectPath, 'flows'));
     if (fs.existsSync(path.join(this.projectPath, './bot.json'))) throw new Error('Requested path has already been initialized.');
-    const bot = await BotHelpers.getFromStudio(this.credentials);
 
+    const bot = await BotHelpers.getFromStudio(this.credentials);
     BotHelpers.writeManifest(bot, this.projectPath);
+
+    const key = this.argv.k || process.env.API_KEY;
+    const secret = this.argv.s || process.env.API_SECRET;
+    const env = `${key}\n${secret}\n`;
+    fs.writeFileSync(path.join(this.projectPath, './.env'), env);
 
     this._success(`Successfully initialized CSML Studio project at ${this.projectPath}`);
   }
