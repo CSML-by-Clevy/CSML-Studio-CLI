@@ -2,7 +2,8 @@
 
 The best way to develop CSML bots from the comfort of your laptop!
 
-![Node.js Package](https://github.com/CSML-by-Clevy/CSML-Studio-CLI/workflows/Node.js%20Package/badge.svg)
+![nodejs build](https://github.com/CSML-by-Clevy/CSML-Studio-CLI/workflows/nodejs%20build/badge.svg)
+[![npm version](https://badge.fury.io/js/%40csml%2Fstudio-cli.svg)](https://badge.fury.io/js/%40csml%2Fstudio-cli)
 
 ## Installation
 
