@@ -15,12 +15,12 @@ export default class Down extends baseCommand {
       '',
       '',
       'Available options for broadcast command:',
-      '   -i, --input        input file containing broadcast targets',
+      '   -i, --input        path to input file containing broadcast targets (one target per line)',
       '   --flow_id          ID or name of flow to trigger',
-      '   [-k, --key]        broadcasting channel API key ID',
-      '   [-s, --secret]     broadcasting channel API secret key',
       '   [-o, --output]     path to debug logs file',
       '   [-v, --verbose]    show debug info in the console',
+      '   [-k, --key]        broadcasting channel API key ID',
+      '   [-s, --secret]     broadcasting channel API secret key',
       '   -h, --help         show this information',
     ];
     this.aliases = {
