@@ -6,6 +6,9 @@ import botHelpers from '../helpers/bot';
 export default class baseCommand {
   constructor() {
     this.help = [
+      'Command Line Tool to manage your CSML studio chatbots',
+      'Create your chatbot on https://studio.csml.dev!'.red,
+      '',
       'Usage: csml-studio [command] [options]'.green,
       '',
       'Available commands:',

@@ -7,7 +7,7 @@ export default class Validate extends baseCommand {
     this.help = [
       'Validate your local bot',
       '',
-      'Usage: csml-studio validate',
+      'Usage: csml-studio validate'.green,
       '',
       '',
       'Available options for validate command:',

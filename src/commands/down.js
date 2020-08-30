@@ -8,7 +8,7 @@ export default class Down extends baseCommand {
     this.help = [
       'Download the bot from CSML Studio (replacing the local bot entirely)',
       '',
-      'Usage: csml-studio down',
+      'Usage: csml-studio down'.green,
       '',
       '',
       'Available options for down command:',

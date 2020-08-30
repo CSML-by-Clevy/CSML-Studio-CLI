@@ -8,7 +8,7 @@ export default class Down extends baseCommand {
     this.help = [
       'Build a new version of the bot in CSML Studio',
       '',
-      'Usage: csml-studio build',
+      'Usage: csml-studio build'.green,
       '',
       '',
       'Available options for build command:',

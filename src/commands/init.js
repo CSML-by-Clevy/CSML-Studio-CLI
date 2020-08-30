@@ -11,7 +11,7 @@ export default class Down extends baseCommand {
     this.help = [
       'Create a new CSML Studio project',
       '',
-      'Usage: csml-studio init',
+      'Usage: csml-studio init'.green,
       '',
       '',
       'Available options for init command:',

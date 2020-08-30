@@ -9,7 +9,7 @@ export default class Up extends baseCommand {
     this.help = [
       'Save your bot in CSML Studio',
       '',
-      'Usage: csml-studio up',
+      'Usage: csml-studio up'.green,
       '',
       '',
       'Available options for up command:',

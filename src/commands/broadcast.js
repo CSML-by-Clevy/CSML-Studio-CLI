@@ -9,9 +9,9 @@ export default class Down extends baseCommand {
   constructor() {
     super();
     this.help = [
-      'Broadcast a message from your configured channel to a group of targets',
+      'Broadcast a message from the currently configured channel to a group of targets',
       '',
-      'Usage: csml-studio broadcast -i myfile.csv --flow_id myflow [-k MYKEY] [-s MYSECRET] [-o debug.log]',
+      'Usage: csml-studio broadcast -i myfile.csv --flow_id myflow [-k MYKEY] [-s MYSECRET] [-o debug.log]'.green,
       '',
       '',
       'Available options for broadcast command:',
