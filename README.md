@@ -30,7 +30,7 @@ Setup a CSML Studio project locally in the given path. This command will automat
 Usage: csml-studio init
 
 Available options for init command:
-   -p, --path         Initial path for bot folder
+   -p, --path         initial path for bot folder 
    [-k, --key]        CSML Studio API key
    [-s, --secret]     CSML Studio API secret
    -h, --help         show this information

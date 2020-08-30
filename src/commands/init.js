@@ -15,7 +15,7 @@ export default class Down extends baseCommand {
       '',
       '',
       'Available options for init command:',
-      '   -p, --path         Initial path for bot folder',
+      '   -p, --path         initial path for bot folder',
       '   [-k, --key]        CSML Studio API key',
       '   [-s, --secret]     CSML Studio API secret',
       '   -h, --help         show this information',
@@ -38,7 +38,7 @@ export default class Down extends baseCommand {
 
     const key = this.argv.k || process.env.API_KEY;
     const secret = this.argv.s || process.env.API_SECRET;
-    const env = `${key}\n${secret}\n`;
+    const env = `API_KEY=${key}\nAPI_SECRET=${secret}\n`;
     fs.writeFileSync(path.join(this.projectPath, './.env'), env);
     fs.writeFileSync(path.join(this.projectPath, './.gitignore'), '.env\n');
 
