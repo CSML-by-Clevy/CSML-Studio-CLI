@@ -1,6 +1,6 @@
 {
   "name": "@csml/studio-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Interact with CSML Studio in CLI - https://studio.csml.dev",
   "bin": {
     "csml-studio": "dist/bin.js"
