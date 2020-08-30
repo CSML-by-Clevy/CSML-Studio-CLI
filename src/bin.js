@@ -24,7 +24,7 @@ function getCommand(name) {
 (async () => {
   const cmd = getCommand(argv._[0]);
 
-  if (argv.help || argv.h) return cmd.usage();
+  if (argv.help || argv.h) return cmd._usage();
 
   await cmd.init();
   await cmd.run();
