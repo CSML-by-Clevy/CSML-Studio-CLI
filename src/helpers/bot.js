@@ -19,8 +19,10 @@ export default class BotHelpers {
       // the bot must have an id
       formatted.id = formatted.name;
 
+      const flowFiles = fs.readdirSync(path.join(projectPath, './flows'));
+
       // work on a copy of the raw flows as they will be modified
-      const localFlowsHashmap = fs.readdirSync(path.join(projectPath, './flows'))
+      const localFlowsHashmap = flowFiles
         .reduce((acc, filename) => {
           // ignore invalid files
           const isCommands = filename.endsWith('.cmds.csml');
@@ -42,6 +44,19 @@ export default class BotHelpers {
           else if (isCommands) acc[flowName].commands = _uniq(content.split('\n')).filter(c => !!c.trim());
           return acc;
         }, {});
+
+      const airules = flowFiles.filter(filename => filename.endsWith('.cmds.csml'))
+        .map(filename => {
+          const commands = fs.readFileSync(path.join(projectPath, './flows', filename))
+            .toString()
+            .split('\n')
+            .map(l => l.trim())
+            .filter(l => l);
+          const target = {
+            flow_id: filename.slice(0, filename.length - '.cmds.csml'.length)
+          };
+          return { commands, target };
+        })
 
       // flows are an array of valid flow objects
       formatted.flows = Object.keys(localFlowsHashmap).map(k => localFlowsHashmap[k]);
