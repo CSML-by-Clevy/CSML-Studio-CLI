@@ -21,7 +21,7 @@ export default class Down extends baseCommand {
   }
 
   async run() {
-    const { body } = await request.get('/bot/build').set(this.credentials);
+    const { body } = await request.post('/bot/build').set(this.credentials);
     this._success(`Built bot version ${body.id}`);
   }
 }
