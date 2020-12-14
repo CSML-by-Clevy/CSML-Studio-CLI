@@ -50,7 +50,7 @@ export default class Up extends baseCommand {
     await Promise.map(studioBot.flows, async sf => {
       if (localFlows.find(lf => lf.name === sf.name)) return;
       await request.del(`/bot/flows/${sf.id}`).set(credentials);
-    }, { concurrency: 20 });
+    }, { concurrency: 10 });
 
     // create new flows that were added locally
     console.log('Creating new flows...'.yellow);
@@ -58,7 +58,7 @@ export default class Up extends baseCommand {
       if (defFlow.name === lf.name) return;
       if (studioBot.flows.find(sf => sf.name === lf.name)) return;
       await request.post('/bot/flows').set(credentials).send(lf);
-    }, { concurrency: 20 });
+    }, { concurrency: 10 });
 
     // update flows that exist in both places
     console.log('Updating old flows...'.yellow);
@@ -66,7 +66,7 @@ export default class Up extends baseCommand {
       const f = studioBot.flows.find(sf => sf.name === lf.name);
       if (!f) return;
       await request.put(`/bot/flows/${f.id}`).set(credentials).send(lf);
-    }, { concurrency: 20 });
+    }, { concurrency: 10 });
 
     // update the bot's AI rules
     if (this.rules) {
