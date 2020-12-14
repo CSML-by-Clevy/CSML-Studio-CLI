@@ -46,17 +46,20 @@ export default class BotHelpers {
         }, {});
 
       formatted.airules = flowFiles.filter(filename => filename.endsWith('.cmds.csml'))
-        .map(filename => {
+        .reduce((acc, filename) => {
           const commands = fs.readFileSync(path.join(projectPath, './flows', filename))
             .toString()
             .split('\n')
             .map(l => l.trim())
-            .filter(l => l);
+            // only keep lines that exist and that are not "/flowname"
+            .filter(l => l && `${l}.cmds.csml` !== `/${filename}`);
           const target = {
-            flow_id: filename.slice(0, filename.length - '.cmds.csml'.length)
+            flow_name: filename.split('.')[0]
           };
-          return { commands, target };
-        })
+          // don't send commands for flows that don't have any
+          if (commands.length) acc.push({ commands, target });
+          return acc;
+        }, [])
 
       // flows are an array of valid flow objects
       formatted.flows = Object.keys(localFlowsHashmap).map(k => localFlowsHashmap[k]);
