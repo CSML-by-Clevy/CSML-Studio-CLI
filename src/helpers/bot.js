@@ -45,7 +45,7 @@ export default class BotHelpers {
           return acc;
         }, {});
 
-      const airules = flowFiles.filter(filename => filename.endsWith('.cmds.csml'))
+      formatted.airules = flowFiles.filter(filename => filename.endsWith('.cmds.csml'))
         .map(filename => {
           const commands = fs.readFileSync(path.join(projectPath, './flows', filename))
             .toString()

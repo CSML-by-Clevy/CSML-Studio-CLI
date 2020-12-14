@@ -69,7 +69,7 @@ export default class Up extends baseCommand {
     }, { concurrency: 10 });
 
     // update the bot's AI rules
-    if (this.rules) {
+    if (this.argv.rules) {
       console.log('Updating AI rules...'.yellow);
       const { airules = [] } = localBot;
       await request.put('/bot').set(credentials).send({ airules });
